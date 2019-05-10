@@ -1,0 +1,25 @@
+﻿@page
+@model IEnumerable<LastTest.Pages.IndexModel>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<center>
+@foreach (var item in Model){
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">@item.Owner</h5>
+    <h6 class="card-subtitle mb-2 text-muted">@item.Id</h6>
+    <p class="card-text"> @item.Text</p>
+    <a href="api/@item.Id" class="card-link">Delete</a>
+  </div>
+</div>
+}
+</center> 
